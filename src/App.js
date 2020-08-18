@@ -17,8 +17,16 @@ function App() {
           </Route>
         </Switch>
         <footer className="app__footer">
-          <Link to="/home">HOME</Link>
-          <Link to="/edit">EDIT LIST</Link>
+          <div>
+            <Link className="home" to="/home">
+              HOME
+            </Link>
+          </div>
+          <div>
+            <Link className="edit" to="/edit">
+              EDIT LIST
+            </Link>
+          </div>
         </footer>
       </div>
     </Router>

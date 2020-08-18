@@ -1,0 +1,6 @@
+.listItemText {
+  display: flex;
+}
+.listItemText__primary {
+  flex-grow: 1;
+}
