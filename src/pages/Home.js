@@ -20,8 +20,11 @@ function Home() {
       <header className="app__header">To do list</header>
       <main className="app__main">
         {tasks?.map((tasks) => (
-          <ListItem>
-            <ListItemText key={tasks.id} primary={tasks.task} />
+          <ListItem key={tasks.id}>
+            <ListItemText
+              primary={tasks.task}
+              secondary={tasks.done.toString()}
+            />
           </ListItem>
         ))}
       </main>

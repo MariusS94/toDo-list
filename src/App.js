@@ -9,16 +9,16 @@ function App() {
     <Router>
       <div className="app">
         <Switch>
-          <Route path="/home">
-            <Home />
-          </Route>
           <Route path="/edit">
             <Edit />
+          </Route>
+          <Route path="/">
+            <Home />
           </Route>
         </Switch>
         <footer className="app__footer">
           <div>
-            <Link className="home" to="/home">
+            <Link className="home" to="/">
               HOME
             </Link>
           </div>
