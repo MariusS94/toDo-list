@@ -3,6 +3,7 @@ export async function fetchToDos() {
   if (!response.ok) {
     throw new Error(response);
   }
+
   const result = await response.json();
 
   return result;

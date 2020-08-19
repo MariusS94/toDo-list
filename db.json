@@ -14,17 +14,6 @@
       "id": 3,
       "task": "Work on weekproject",
       "done": false
-    },
-    {
-      "id": 4,
-      "task": "Read a book",
-      "done": false
-    },
-
-    {
-      "task": "hallo",
-      "done": false,
-      "id": 13
     }
   ]
 }

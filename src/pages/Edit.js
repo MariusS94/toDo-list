@@ -5,6 +5,8 @@ import { postToDos } from "../api/todos";
 const Edit = () => {
   const [task, setTask] = useState("");
   const [done, setDone] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(false);
 
   function handleChangeTask(event) {
     setTask(event.target.value);
@@ -13,15 +15,26 @@ const Edit = () => {
   function handleClickDone() {
     setDone(true);
   }
+
   async function handleSubmit(event) {
     event.preventDefault();
+    setLoading(true);
+    setError(false);
+
     const todo = {
       task,
       done,
     };
-    await postToDos(todo);
-    setTask("");
-    setDone(false);
+    try {
+      await postToDos(todo);
+      setTask("");
+      setDone(false);
+    } catch (error) {
+      console.error(error);
+      setError(true);
+    } finally {
+      setLoading(false);
+    }
   }
 
   console.log(task);
@@ -41,7 +54,13 @@ const Edit = () => {
             value={done}
             onChange={handleClickDone}
           ></input>
-          <input className="submitBtn" type="submit" value="Add task"></input>
+          <input
+            className="submitBtn"
+            type="submit"
+            value="Add task"
+            disabled={!task || loading}
+          ></input>
+          {error && <p>Something unexpected happend 🤷‍♂️. Please try later.</p>}
         </form>
       </main>
     </>
