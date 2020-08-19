@@ -5,10 +5,21 @@ export async function fetchToDos() {
   }
   const result = await response.json();
 
-  const toDos = result.map((tasks) => ({
-    task: tasks.title,
-    id: tasks.id,
-  }));
+  return result;
+}
 
-  return toDos;
+export async function postToDos(todo) {
+  console.log(todo);
+  const response = await fetch("http://localhost:3333/todos", {
+    method: "POST",
+
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(todo),
+  });
+  if (!response.ok) {
+    throw new Error(response);
+  }
+  const result = await response.json();
+
+  return result;
 }

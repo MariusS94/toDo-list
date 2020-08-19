@@ -2,7 +2,7 @@ import React from "react";
 import "./ListItem.css";
 
 function ListItem({ children }) {
-  return <p className="listItem">{children}</p>;
+  return <div className="listItem">{children}</div>;
 }
 
 export default ListItem;

@@ -1,11 +1,11 @@
 import React from "react";
 import "./ListItemText.css";
 
-function ListItemText({ primary }) {
+function ListItemText({ primary, secondary }) {
   return (
     <div className="listItemText">
       <span className="listItemText__primary">{primary}</span>
-      <input type="checkbox"></input>
+      <span>{secondary}</span>
     </div>
   );
 }
