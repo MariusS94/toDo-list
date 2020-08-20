@@ -14,6 +14,26 @@
       "id": 3,
       "task": "Work on weekproject",
       "done": false
+    },
+    {
+      "task": "gzgz",
+      "done": false,
+      "id": 4
+    },
+    {
+      "task": "zg",
+      "done": true,
+      "id": 5
+    },
+    {
+      "task": "fgh",
+      "done": true,
+      "id": 6
+    },
+    {
+      "task": "sds",
+      "done": false,
+      "id": 7
     }
   ]
 }

@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { fetchToDos } from "../api/todos";
-import ListItemText from "../components/ListItemText";
-import "../App.css";
-import ListItem from "../components/ListItem";
+import React from "react";
+import MainHome from "../components/MainHome";
+import Header from "../components/Header";
+import styled from "@emotion/styled";
+import Footer from "../components/Footer";
+
+const ContainerHome = styled.div`
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+`;
 
 function Home() {
-  const [tasks, setTasks] = useState(null);
-
-  useEffect(() => {
-    async function fetchData() {
-      const toDos = await fetchToDos();
-      setTasks(toDos);
-    }
-    fetchData();
-  }, []);
+  /* const { data: tasks, loading, error } = useAsync(fetchToDos); */
 
   return (
-    <>
-      <header className="app__header">To do list</header>
-      <main className="app__main">
-        {tasks?.map((tasks) => (
-          <ListItem key={tasks.id}>
-            <ListItemText
-              primary={tasks.task}
-              secondary={tasks.done.toString()}
-            />
-          </ListItem>
-        ))}
-      </main>
-    </>
+    <ContainerHome>
+      <Header>To do list</Header>
+      <MainHome></MainHome>
+      <Footer></Footer>
+    </ContainerHome>
   );
 }
 
