@@ -1,4 +1,4 @@
-*,
+/* *,
 *:before,
 *:after {
   box-sizing: border-box;
@@ -11,6 +11,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
 }
 
 code {
@@ -24,4 +25,4 @@ code {
     rgba(118, 134, 214, 1) 0%,
     rgba(138, 90, 109, 1) 100%
   );
-}
+} */

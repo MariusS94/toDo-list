@@ -1,13 +1,15 @@
 import React from "react";
-import { BrowserRouter as Router, Link, Switch, Route } from "react-router-dom";
-import "./App.css";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+
 import Home from "./pages/Home";
 import Edit from "./pages/Edit";
+import GlobalStyles from "./GlobalStyles";
 
 function App() {
   return (
-    <Router>
-      <div className="app">
+    <>
+      <GlobalStyles />
+      <Router>
         <Switch>
           <Route path="/edit">
             <Edit />
@@ -16,20 +18,8 @@ function App() {
             <Home />
           </Route>
         </Switch>
-        <footer className="app__footer">
-          <div>
-            <Link className="home" to="/">
-              HOME
-            </Link>
-          </div>
-          <div>
-            <Link className="edit" to="/edit">
-              EDIT LIST
-            </Link>
-          </div>
-        </footer>
-      </div>
-    </Router>
+      </Router>
+    </>
   );
 }
 

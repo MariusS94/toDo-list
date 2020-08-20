@@ -1,70 +1,25 @@
-import React, { useState } from "react";
-import "../App.css";
-import { postToDos } from "../api/todos";
+import React from "react";
+import AddForm from "../components/Form";
+import MainEdit from "../components/MainEdit";
+import Header from "../components/Header";
+import styled from "@emotion/styled";
+import Footer from "../components/Footer";
+
+const ContainerEdit = styled.div`
+  height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+`;
 
 const Edit = () => {
-  const [task, setTask] = useState("");
-  const [done, setDone] = useState(false);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(false);
-
-  function handleChangeTask(event) {
-    setTask(event.target.value);
-  }
-
-  function handleClickDone() {
-    setDone(true);
-  }
-
-  async function handleSubmit(event) {
-    event.preventDefault();
-    setLoading(true);
-    setError(false);
-
-    const todo = {
-      task,
-      done,
-    };
-    try {
-      await postToDos(todo);
-      setTask("");
-      setDone(false);
-    } catch (error) {
-      console.error(error);
-      setError(true);
-    } finally {
-      setLoading(false);
-    }
-  }
-
-  console.log(task);
   return (
-    <>
-      <header className="app__header">Edit list</header>
-      <main className="app__main edit_main">
-        <form onSubmit={handleSubmit}>
-          <input
-            className="inputfield"
-            placeholder="Add new task"
-            value={task}
-            onChange={handleChangeTask}
-          ></input>
-          <input
-            className="checkbox"
-            type="checkbox"
-            value={done}
-            onChange={handleClickDone}
-          ></input>
-          <input
-            className="submitBtn"
-            type="submit"
-            value="Add task"
-            disabled={!task || loading}
-          ></input>
-          {error && <p>Something unexpected happend 🤷‍♂️. Please try later.</p>}
-        </form>
-      </main>
-    </>
+    <ContainerEdit>
+      <Header className="app__header">Edit list</Header>
+      <MainEdit>
+        <AddForm></AddForm>
+      </MainEdit>
+      <Footer></Footer>
+    </ContainerEdit>
   );
 };
 
