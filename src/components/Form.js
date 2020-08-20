@@ -78,7 +78,7 @@ const AddForm = () => {
       <SubmitBtn type="submit" value="Add task" disabled={!task || loading}>
         Submit
       </SubmitBtn>
-      {error && <p>Something unexpected happend 🤷‍♂️. Please try later.</p>}
+      {error && <p>Something unexpected happend 🙅‍♂️. Please try later.</p>}
     </form>
   );
 };

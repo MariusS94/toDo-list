@@ -1,10 +1,4 @@
 import React from "react";
-/* import { fetchToDos } from "../api/todos"; */
-/* import ListItemText from "../components/ListItemText"; */
-/* import "../App.css"; */
-/* import ListItem from "../components/ListItem";
-import useAsync from "../hooks/useAsync";
-import { fetchToDos } from "../api/todos"; */
 import MainHome from "../components/MainHome";
 import Header from "../components/Header";
 import styled from "@emotion/styled";
