@@ -50,6 +50,7 @@ const Edit = () => {
             onChange={handleChangeTask}
           ></input>
           <input
+            className="checkbox"
             type="checkbox"
             value={done}
             onChange={handleClickDone}
